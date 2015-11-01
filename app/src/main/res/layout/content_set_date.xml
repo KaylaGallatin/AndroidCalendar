@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_set_date"
     tools:context=".set_date">
@@ -12,51 +14,45 @@
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="false"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="false"
-        android:background="@color/lightgray">
+        android:background="@color/lightgray"
+        android:weightSum="1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:layout_gravity="center|top"
-            android:layout_alignParentTop="true"
-            android:background="@color/lightgray"
-            android:orientation="vertical"
-            android:gravity="top">
-
-            <DatePicker
-                android:id="@+id/datePicker"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|top"
-                android:layout_alignParentTop="true"
-
-                android:paddingTop="-10px" />
-        </LinearLayout>
 
         <!-- Save -->
+        <!-- Cancel -->
+
         <Button
             android:id="@+id/saveDateButton"
             android:text="Save"
             android:layout_width="fill_parent"
-            android:layout_height="50dip"
+            android:layout_height="60dip"
             android:background="@color/darkgray"
             android:layout_marginLeft="2dip"
             android:layout_marginRight="2dip">
         </Button>
-        <!-- Cancel -->
+
         <Button
             android:id="@+id/cancelDateButton"
             android:text="Cancel"
             android:layout_width="fill_parent"
-            android:layout_height="50dip"
+            android:layout_height="60dip"
             android:background="@color/darkgray"
             android:layout_marginLeft="2dip"
             android:layout_marginRight="2dip"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:layout_weight="0.02">
         </Button>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick A Date"
+            android:id="@+id/button"
+            android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
 </RelativeLayout>
